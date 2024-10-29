@@ -1,21 +1,32 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
 import {HeaderComponent} from "./layouts/header/header.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
+import {CommonModule} from '@angular/common';
+import {SettingModel} from './shared/models/setting-model';
+import {defaultSettings} from './shared/mocks/default-settings';
+import {ThemeService} from "./shared/services/theme.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SideBarComponent, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
+  themeService: ThemeService = inject(ThemeService);
   title = 'petUdemi';
 
-  ngOnInit(){
+  ngOnInit(): void {
     const userLanguages: readonly string[] = navigator.languages;
-    console.log(userLanguages)
+    console.log(userLanguages);
+    this.setTheme();
+  }
+
+  setTheme(): void {
+    const settings: SettingModel = JSON.parse(localStorage.getItem('appSetting')!);
+    settings && settings.theme? this.themeService.setTheme(settings.theme): this.themeService.setTheme('dark');
   }
 }

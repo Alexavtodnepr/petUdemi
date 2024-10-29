@@ -1,0 +1,9 @@
+<mat-form-field>
+    <mat-label>Оберіть тему</mat-label>
+    <mat-select [(ngModel)]="theme" (selectionChange)=changeTheme($event) name="food">
+        @for (theme of themes; track theme) {
+            <mat-option [value]="theme.value">{{theme.viewValue}}</mat-option>
+        }
+    </mat-select>
+</mat-form-field>
+
