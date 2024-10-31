@@ -8,11 +8,12 @@ import {SettingsService} from "../../shared/services/settings.service";
 import {MenuItemsInterface} from "../../shared/models/menu-items.interface";
 import {menuItems} from "../../shared/mocks/menu";
 import {MatTooltip} from "@angular/material/tooltip";
+import {ButtonMenuComponent} from "../button-menu/button-menu.component";
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [MatButtonModule, RouterModule, CommonModule, MatListItem, MatNavList, MatIcon, MatTooltip],
+  imports: [MatButtonModule, RouterModule, CommonModule, MatListItem, MatNavList, MatIcon, MatTooltip, ButtonMenuComponent],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss'
 })

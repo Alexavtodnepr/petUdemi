@@ -1,22 +1,49 @@
-:host{
-  ::ng-deep .mdc-list-item__primary-text{
+:host {
+  height: 100%;
+
+  ::ng-deep .mdc-list-item__primary-text {
     display: flex !important;
     gap: 5px !important;
   }
 
-  .menu{
+  .button-menu {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    transition: left 0.2s ease;
+    z-index: 1;
+  }
+
+  .button-menu.collapsed {
+    top: 10px;
+    left: 15px;
+  }
+
+  .menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100%;
     width: 100%;
+    margin-top: 40px;
+    height: calc(100% - 40px);
     gap: 5px;
-    &-item{
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &-item {
       width: 100%;
+      padding-right: 2px;
     }
-    &-list-item{
+
+    &-list-item {
       width: 180px;
+      transition: width 0.2s ease;
+    }
+
+    &-list-item.collapsed {
+      width: 56px;
     }
   }
 }
+
