@@ -4,8 +4,13 @@ import {ThemeTypes} from "../models/setting-model";
 @Injectable({
     providedIn: "root",
 })
-export class ThemeService {
+export class SettingsService {
     themeSignal = signal<string>("dark");
+    isCollapsedMenu = signal<boolean>(false);
+
+    updateSidebar(state: boolean){
+        this.isCollapsedMenu.update((value) => value = state)
+    }
 
     setTheme(theme: string): void {
         this.themeSignal.set(theme);

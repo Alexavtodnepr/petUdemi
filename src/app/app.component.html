@@ -1,8 +1,13 @@
-<div [ngClass]="themeService.themeSignal()">
-  <app-side-bar class="sidebar"></app-side-bar>
-  <app-header class="header"></app-header>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-  <app-footer class="footer"></app-footer>
+<div [ngClass]="settingService.themeSignal()" class="content-container">
+    @if (!breakpointService.isHandset()) {
+        <app-side-bar class="sidebar" [ngClass]="{'collapsed' : settingService.isCollapsedMenu()}"></app-side-bar>
+    }
+    <div class="content-wrap">
+        <app-header class="header"></app-header>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer class="footer"></app-footer>
+    </div>
+
 </div>

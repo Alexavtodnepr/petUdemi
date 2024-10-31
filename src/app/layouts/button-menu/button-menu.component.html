@@ -1,0 +1,23 @@
+@if (breakpointService.isHandset()) {
+    <div>
+        <button mat-mini-fab [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            @for(item of mobileMenuItems; track item){
+                <button mat-menu-item [routerLink]="item.route" [disabled]="isActiveRoute(item.route)">
+                    <mat-icon>{{item.icon}}</mat-icon>
+                    <span>{{item.name}}</span>
+                </button>
+            }
+            <button mat-menu-item [routerLink]="'/settings'" [disabled]="isActiveRoute('/settings')">
+                <mat-icon>settings</mat-icon>
+                <span>Налаштування</span>
+            </button>
+        </mat-menu>
+    </div>
+} @else {
+    <button mat-mini-fab (click)="updateSidebar()" matTooltip="{{settingService.isCollapsedMenu()? 'Розгорнути меню':'Згорнути меню'}}">
+        <mat-icon>menu</mat-icon>
+    </button>
+}

@@ -6,17 +6,20 @@ import {FooterComponent} from "./layouts/footer/footer.component";
 import {CommonModule} from '@angular/common';
 import {SettingModel} from './shared/models/setting-model';
 import {defaultSettings} from './shared/mocks/default-settings';
-import {ThemeService} from "./shared/services/theme.service";
+import {SettingsService} from "./shared/services/settings.service";
+import {ButtonMenuComponent} from "./layouts/button-menu/button-menu.component";
+import {BreakpointService} from "./shared/services/breakpoint.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent, ButtonMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
-  themeService: ThemeService = inject(ThemeService);
+  settingService: SettingsService = inject(SettingsService);
+  breakpointService: BreakpointService = inject(BreakpointService);
   title = 'petUdemi';
 
   ngOnInit(): void {
@@ -27,6 +30,6 @@ export class AppComponent implements OnInit{
 
   setTheme(): void {
     const settings: SettingModel = JSON.parse(localStorage.getItem('appSetting')!);
-    settings && settings.theme? this.themeService.setTheme(settings.theme): this.themeService.setTheme('dark');
+    settings && settings.theme? this.settingService.setTheme(settings.theme): this.settingService.setTheme('dark');
   }
 }

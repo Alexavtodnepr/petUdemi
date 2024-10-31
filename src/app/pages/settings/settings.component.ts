@@ -5,7 +5,7 @@ import {MatOption, MatSelect, MatSelectChange, MatSelectModule} from "@angular/m
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {SettingModel, ThemeTypes} from "../../shared/models/setting-model";
-import {ThemeService} from "../../shared/services/theme.service";
+import {SettingsService} from "../../shared/services/settings.service";
 
 @Component({
   selector: 'app-settings',
@@ -15,7 +15,7 @@ import {ThemeService} from "../../shared/services/theme.service";
   imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule],
 })
 export class SettingsComponent implements OnInit{
-  themeService: ThemeService = inject(ThemeService);
+  settingService: SettingsService = inject(SettingsService);
 
   theme!: ThemeTypes;
   settings!: SettingModel;
@@ -34,6 +34,6 @@ export class SettingsComponent implements OnInit{
 
   changeTheme(event: MatSelectChange): void {
     localStorage.setItem('appSetting', JSON.stringify({...this.settings, theme: event.value}));
-    this.themeService.updateTheme(event.value);
+    this.settingService.updateTheme(event.value);
   }
 }
