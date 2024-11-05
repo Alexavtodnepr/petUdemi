@@ -1,3 +1,9 @@
+//@use "./assets/themes/theme" as theme;
+@use '@angular/material' as mat;
+@use "./assets/themes/m3-theme.scss";
+
+mat.$theme-ignore-duplication-warnings:true;
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -5,21 +11,26 @@
 }
 
 .dark{
+  @include mat.all-component-themes(m3-theme.$dark-theme);
+  .mat-mdc-checkbox, .mat-mdc-slide-toggle{
+    --mat-checkbox-label-text-color: white;
+    --mat-switch-label-text-color: white;
+  }
   ::-webkit-scrollbar {
-    width: 8px; /* Ширина скроллбара */
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #ffffff; /* Цвет ползунка */
-    border-radius: 4px; /* Закругленные края */
+    background-color: #ffffff;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #afafaf; /* Цвет при наведении */
+    background-color: #afafaf;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #737373; /* Цвет трека */
+    background-color: #737373;
     border-radius: 4px;
   }
   .sidebar {
@@ -35,6 +46,7 @@
 
   .content {
     background-color: #111828;
+    color: white;
   }
 
   .footer {
@@ -44,21 +56,22 @@
 }
 
 .light{
+  @include mat.all-component-themes(m3-theme.$light-theme);
   ::-webkit-scrollbar {
-    width: 8px; /* Ширина скроллбара */
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #303030; /* Цвет ползунка */
-    border-radius: 4px; /* Закругленные края */
+    background-color: #303030;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Цвет при наведении */
+    background-color: #555;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #888888; /* Цвет трека */
+    background-color: #888888;
     border-radius: 4px;
   }
   .sidebar {
@@ -85,21 +98,22 @@
 }
 
 .blue{
+  @include mat.all-component-themes(m3-theme.$dark-theme);
   ::-webkit-scrollbar {
-    width: 8px; /* Ширина скроллбара */
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #1637f1; /* Цвет ползунка */
-    border-radius: 4px; /* Закругленные края */
+    background-color: #1637f1;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #344fed; /* Цвет при наведении */
+    background-color: #344fed;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #9c9a9a; /* Цвет трека */
+    background-color: #9c9a9a;
     border-radius: 4px;
   }
   .sidebar {
@@ -126,25 +140,39 @@
 }
 
 .pink{
+  @include mat.all-component-themes(m3-theme.$pink-theme);
+  .mdc-fab,.mat-mdc-fab-base, .mdc-fab--mini, .mat-mdc-mini-fab, .mat-accent, .mat-mdc-button-base{
+    --mdc-fab-container-color: #fed9e1;
+    --mat-fab-small-ripple-color: rgb(110 0 0 / 12%);
+    --mdc-fab-small-container-color: #ff0000;
+    --mat-fab-foreground-color: #ff0000;
+    --mat-fab-state-layer-color: #ff0000;
+    --mat-fab-ripple-color: rgb(255 0 0 / 12%);
+    --mat-fab-small-foreground-color: #ff0000;
+    --mat-fab-small-state-layer-color: #ff0000;
+  }
+  .mat-mdc-mini-fab{
+    background-color: #fed9e1;
+  }
   ::-webkit-scrollbar {
-    width: 8px; /* Ширина скроллбара */
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #fab3b3; /* Цвет ползунка */
-    border-radius: 4px; /* Закругленные края */
+    background-color: #fab3b3;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #efacac; /* Цвет при наведении */
+    background-color: #efacac;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #9e9e9e; /* Цвет трека */
+    background-color: #9e9e9e;
     border-radius: 4px;
   }
   .sidebar {
-    background-color: white;
+    background-color: rgba(254, 217, 225, 0.5);
     color: black;
     border-right: 1px solid #f4b7b7;
   }
@@ -156,12 +184,31 @@
   }
 
   .content {
-    background-color: white;
+    background-color: rgba(254, 217, 225, 0.1);
   }
 
   .footer {
-    background-color: white;
+    background-color: rgba(254, 217, 225, 0.1);
     color: #ad0955;
     border-top: 1px solid #f4b7b7;
   }
+}
+
+.flex{
+  display: flex;
+}
+.flex-col{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.items-center{
+  align-items: center;
+}
+.gap-25{
+  gap: 25px;
+}
+.flex-wrap{
+  flex-wrap: wrap;
 }

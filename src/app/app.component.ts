@@ -20,6 +20,7 @@ import {BreakpointService} from "./shared/services/breakpoint.service";
 export class AppComponent implements OnInit{
   settingService: SettingsService = inject(SettingsService);
   breakpointService: BreakpointService = inject(BreakpointService);
+  isHideFooter: boolean = true;
   title = 'petUdemi';
 
   ngOnInit(): void {
@@ -30,6 +31,12 @@ export class AppComponent implements OnInit{
 
   setTheme(): void {
     const settings: SettingModel = JSON.parse(localStorage.getItem('appSetting')!);
-    settings && settings.theme? this.settingService.setTheme(settings.theme): this.settingService.setTheme('dark');
+    if(settings && settings.theme){
+      this.settingService.setTheme(settings.theme);
+      this.settingService.updateFooter(settings.isHideFooter);
+    }else{
+      this.settingService.setTheme('dark');
+      this.settingService.updateFooter(false);
+    }
   }
 }

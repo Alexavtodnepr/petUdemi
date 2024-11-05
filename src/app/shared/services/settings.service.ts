@@ -7,6 +7,11 @@ import {ThemeTypes} from "../models/setting-model";
 export class SettingsService {
     themeSignal = signal<string>("dark");
     isCollapsedMenu = signal<boolean>(false);
+    isHideFooter = signal<boolean>(false);
+
+    updateFooter(state: boolean){
+        this.isHideFooter.update((value) => value = state);
+    }
 
     updateSidebar(state: boolean){
         this.isCollapsedMenu.update((value) => value = state)

@@ -4,10 +4,13 @@
     }
     <div class="content-wrap">
         <app-header class="header"></app-header>
-        <div class="content">
+        <div class="content"
+             [ngStyle]="{ height: settingService.isHideFooter() ? 'calc(100vh - 60px)' : 'calc(100vh - 120px)'}">
             <router-outlet></router-outlet>
         </div>
-        <app-footer class="footer"></app-footer>
+        @if (!settingService.isHideFooter()) {
+            <app-footer class="footer"></app-footer>
+        }
     </div>
 
 </div>
