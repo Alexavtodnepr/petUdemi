@@ -6,18 +6,22 @@ import {MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 import {BreakpointService} from "../../shared/services/breakpoint.service";
 import {CommonModule} from "@angular/common";
+import {AuthRegisterComponent} from "../../pages/auth-register/auth-register.component";
+import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    ButtonMenuComponent
-  ],
+    imports: [
+        CommonModule,
+        ButtonMenuComponent,
+        AuthRegisterComponent
+    ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  breakpointService: BreakpointService = inject(BreakpointService);
+    authService: AuthService = inject(AuthService);
+    breakpointService: BreakpointService = inject(BreakpointService);
 
 }

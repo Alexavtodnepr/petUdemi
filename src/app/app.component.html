@@ -1,5 +1,5 @@
 <div [ngClass]="settingService.themeSignal()" class="content-container">
-    @if (!breakpointService.isHandset()) {
+    @if (this.authService.isAuth() && !breakpointService.isHandset()) {
         <app-side-bar class="sidebar" [ngClass]="{'collapsed' : settingService.isCollapsedMenu()}"></app-side-bar>
     }
     <div class="content-wrap">

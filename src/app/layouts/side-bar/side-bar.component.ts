@@ -9,6 +9,7 @@ import {MenuItemsInterface} from "../../shared/models/menu-items.interface";
 import {menuItems} from "../../shared/mocks/menu";
 import {MatTooltip} from "@angular/material/tooltip";
 import {ButtonMenuComponent} from "../button-menu/button-menu.component";
+import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-side-bar',
@@ -20,9 +21,14 @@ import {ButtonMenuComponent} from "../button-menu/button-menu.component";
 export class SideBarComponent {
   private router: Router = inject(Router);
   settingService: SettingsService = inject(SettingsService);
+  authService: AuthService = inject(AuthService);
   sideBarItems: MenuItemsInterface[] = menuItems;
 
   isActiveRoute(route: string): boolean {
     return this.router.url === route;
+  }
+
+  logout() {
+    this.authService.logOut();
   }
 }

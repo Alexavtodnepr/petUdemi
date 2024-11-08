@@ -1,5 +1,11 @@
-@if (breakpointService.isHandset()) {
+@if (authService.isAuth() && breakpointService.isHandset()) {
     <div class="button-menu-wrap">
         <app-button-menu class="button-menu"></app-button-menu>
     </div>
 }
+<div class="flex flex-row justify-between w-full">
+    <div>other-content</div>
+    <div>
+        <app-auth-register></app-auth-register>
+    </div>
+</div>

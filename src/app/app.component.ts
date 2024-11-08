@@ -9,6 +9,7 @@ import {defaultSettings} from './shared/mocks/default-settings';
 import {SettingsService} from "./shared/services/settings.service";
 import {ButtonMenuComponent} from "./layouts/button-menu/button-menu.component";
 import {BreakpointService} from "./shared/services/breakpoint.service";
+import {AuthService} from "./shared/services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import {BreakpointService} from "./shared/services/breakpoint.service";
 export class AppComponent implements OnInit{
   settingService: SettingsService = inject(SettingsService);
   breakpointService: BreakpointService = inject(BreakpointService);
+  authService: AuthService = inject(AuthService);
   isHideFooter: boolean = true;
   title = 'petUdemi';
 

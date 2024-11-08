@@ -1,0 +1,9 @@
+@if(this.authService.isAuth()){
+    <mat-icon>person_outline</mat-icon>
+}@else {
+    <div class="flex flex-row gap-25">
+        <p class="pointer" (click)="login()">login</p>
+        <p> | </p>
+        <p class="pointer" (click)="login()">register</p>
+    </div>
+}

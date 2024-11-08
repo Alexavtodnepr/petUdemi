@@ -203,6 +203,18 @@ mat.$theme-ignore-duplication-warnings:true;
 .flex-row{
   flex-direction: row;
 }
+.justify-between{
+  justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-end{
+  justify-content: flex-end;
+}
 .items-center{
   align-items: center;
 }
@@ -215,4 +227,12 @@ mat.$theme-ignore-duplication-warnings:true;
 
 .pb-10{
   padding-bottom: 10px;
+}
+.w-full{
+ width: 100%;
+}
+
+.pointer{
+  cursor: pointer;
+  opacity: 0.9;
 }

@@ -21,7 +21,7 @@
             <mat-icon>settings</mat-icon>
             {{ settingService.isCollapsedMenu() ? '' : 'Налаштування' }}
         </a>
-        <a class="menu-list-item" [ngClass]="{'collapsed' : settingService.isCollapsedMenu()}" mat-list-item matTooltip="Вийти">
+        <a (click)="logout()" class="menu-list-item" [ngClass]="{'collapsed' : settingService.isCollapsedMenu()}" mat-list-item matTooltip="Вийти">
             <mat-icon>exit_to_app</mat-icon>
             {{ settingService.isCollapsedMenu() ? '' :'Вийти' }}</a>
     </mat-nav-list>
