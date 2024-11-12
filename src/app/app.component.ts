@@ -38,7 +38,7 @@ export class AppComponent implements OnInit{
       this.settingService.updateFooter(settings.isHideFooter);
     }else{
       this.settingService.setTheme('dark');
-      this.settingService.updateFooter(false);
+      this.settingService.updateFooter(true);
     }
   }
 }
