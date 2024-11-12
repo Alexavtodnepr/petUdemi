@@ -1,31 +1,98 @@
-  section {
-    display: table;
-  }
+:host {
+  background-color: black;
+}
 
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    min-width: 120px;
-  }
+section {
+  display: table;
+}
 
-  .example-button-row {
-    display: table-cell;
-    max-width: 600px;
-  }
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
 
-  .example-button-row .mat-mdc-button-base {
-    margin: 8px 8px 8px 0;
-  }
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
 
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
 
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.background-video {
+  height: 100%;
+  left: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: -1;
+}
+
+.title-wrap {
+  height: 85%;
+}
+
+.title-text {
+  font-size: 24px;
+  max-width: 900px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.banner-title {
+  width: 400px;
+  height: 200px;
+}
+
+.card-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 200px;
+}
+
+.example-card {
+  max-width: 420px;
+}
+
+.card-block-wrap{
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .card-block {
+    grid-template-columns: repeat(2, 1fr); /* 2 в ряд на средних экранах */
   }
+}
+
+@media (max-width: 600px) {
+  .card-block {
+    grid-template-columns: 1fr; /* 1 в ряд на маленьких экранах */
+  }
+}

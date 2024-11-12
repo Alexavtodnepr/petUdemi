@@ -40,12 +40,12 @@ mat.$theme-ignore-duplication-warnings:true;
   }
 
   .header {
-    background-color: #0d111c;
+    background-color: #0d111c9e;
     color: white;
   }
 
   .content {
-    background-color: #111828;
+    //background-color: #111828;
     color: white;
   }
 
@@ -87,7 +87,7 @@ mat.$theme-ignore-duplication-warnings:true;
   }
 
   .content {
-    background-color: white;
+    //background-color: white;
   }
 
   .footer {
@@ -129,7 +129,7 @@ mat.$theme-ignore-duplication-warnings:true;
   }
 
   .content {
-    background-color: #7e7d7d;
+    //background-color: #7e7d7d;
   }
 
   .footer {
@@ -184,7 +184,7 @@ mat.$theme-ignore-duplication-warnings:true;
   }
 
   .content {
-    background-color: rgba(254, 217, 225, 0.1);
+    //background-color: rgba(254, 217, 225, 0.1);
   }
 
   .footer {
@@ -218,6 +218,9 @@ mat.$theme-ignore-duplication-warnings:true;
 .items-center{
   align-items: center;
 }
+.items-end{
+  align-items: end;
+}
 .gap-25{
   gap: 25px;
 }
@@ -230,6 +233,9 @@ mat.$theme-ignore-duplication-warnings:true;
 }
 .w-full{
  width: 100%;
+}
+.h-full{
+  height: 100%;
 }
 
 .pointer{
