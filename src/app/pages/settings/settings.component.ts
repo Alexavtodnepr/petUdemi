@@ -26,9 +26,9 @@ export class SettingsComponent implements OnInit{
 
   themes: {value: ThemeTypes; viewValue: string}[] = [
     {value: 'dark', viewValue: 'Темна'},
-    {value: 'light', viewValue: 'Світла'},
-    {value: 'blue', viewValue: 'Синя'},
-    {value: 'pink', viewValue: 'Рожева'},
+    // {value: 'light', viewValue: 'Світла'},
+    // {value: 'blue', viewValue: 'Синя'},
+    // {value: 'pink', viewValue: 'Рожева'},
   ];
 
   ngOnInit(): void {

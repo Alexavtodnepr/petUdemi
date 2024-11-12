@@ -11,13 +11,14 @@ import {
   MatCardSubtitle,
   MatCardTitle
 } from "@angular/material/card";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-main-page',
   templateUrl: 'main-page.component.html',
   styleUrl: 'main-page.component.scss',
   standalone: true,
-  imports: [CommonModule, MatIcon, MatButtonModule, MatDivider, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard],
+    imports: [CommonModule, MatIcon, MatButtonModule, MatDivider, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard, RouterLink],
 })
 export class MainPageComponent {
 }

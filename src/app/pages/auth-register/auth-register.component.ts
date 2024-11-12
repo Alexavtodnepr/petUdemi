@@ -4,11 +4,9 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatOption, MatSelect, MatSelectChange, MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
-import {SettingModel, ThemeTypes} from "../../shared/models/setting-model";
-import {SettingsService} from "../../shared/services/settings.service";
-import {MatCheckbox, MatCheckboxChange} from "@angular/material/checkbox";
+import {MatCheckbox} from "@angular/material/checkbox";
 import {MatDivider} from "@angular/material/divider";
-import {MatSlideToggle, MatSlideToggleChange} from "@angular/material/slide-toggle";
+import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {AuthService} from "../../shared/services/auth.service";
 import {MatIcon} from "@angular/material/icon";
 
