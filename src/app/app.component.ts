@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterOutlet} from '@angular/router';
 import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
 import {HeaderComponent} from "./layouts/header/header.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
@@ -12,33 +12,39 @@ import {BreakpointService} from "./shared/services/breakpoint.service";
 import {AuthService} from "./shared/services/auth.service";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent, ButtonMenuComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent, ButtonMenuComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
-  settingService: SettingsService = inject(SettingsService);
-  breakpointService: BreakpointService = inject(BreakpointService);
-  authService: AuthService = inject(AuthService);
-  isHideFooter: boolean = true;
-  title = 'petUdemi';
+export class AppComponent implements OnInit {
+    settingService: SettingsService = inject(SettingsService);
+    breakpointService: BreakpointService = inject(BreakpointService);
+    authService: AuthService = inject(AuthService);
+    isHideFooter: boolean = true;
+    title = 'petUdemi';
 
-  ngOnInit(): void {
-    const userLanguages: readonly string[] = navigator.languages;
-    console.log(userLanguages);
-    this.setTheme();
-  }
-
-  setTheme(): void {
-    const settings: SettingModel = JSON.parse(localStorage.getItem('appSetting')!);
-    if(settings && settings.theme){
-      this.settingService.setTheme(settings.theme);
-      this.settingService.updateFooter(settings.isHideFooter);
-    }else{
-      this.settingService.setTheme('dark');
-      this.settingService.updateFooter(true);
+    ngOnInit(): void {
+        const userLanguages: readonly string[] = navigator.languages;
+        console.log(userLanguages);
+        this.setTheme();
     }
-  }
+
+    setTheme(): void {
+        const loader = document.getElementById('global-loader');
+        if (loader) {
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 2000)
+        }
+        const settings: SettingModel = JSON.parse(localStorage.getItem('appSetting')!);
+        if (settings && settings.theme) {
+            this.settingService.setTheme(settings.theme);
+            this.settingService.updateFooter(settings.isHideFooter);
+        } else {
+            this.settingService.setTheme('dark');
+            this.settingService.updateFooter(true);
+        }
+    }
 }

@@ -4,7 +4,11 @@
     </div>
 }
 <div class="flex flex-row justify-between w-full">
-    <div>social links</div>
+    @if(!breakpointService.isHandset()){
+        <div>social links</div>
+    } @else {
+        <div></div>
+    }
     <div>
         <app-auth-register></app-auth-register>
     </div>
