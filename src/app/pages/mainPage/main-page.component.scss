@@ -1,5 +1,6 @@
 :host {
   background-color: black;
+  box-shadow: inset 0px 0px 100px 50px rgba(0,0,0,1);
 }
 
 section {
@@ -39,12 +40,27 @@ section {
   left: 50%;
   -o-object-fit: cover;
   object-fit: cover;
+  overflow: hidden;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: -1;
+}
+
+.main-page-videoplay {
+  height: 100%;
+  left: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   box-shadow: inset 0px 0px 100px 50px rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-wrap {
@@ -161,6 +177,13 @@ section {
   &-list{
     margin-left: 40px;
   }
+}
+
+.renderer-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
 }
 
 //@media (max-width: 1024px) {
