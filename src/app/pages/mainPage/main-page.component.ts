@@ -41,14 +41,14 @@ export class MainPageComponent implements OnInit, AfterViewInit, OnDestroy {
     private animationId!: number;
     windowWidth: number = window.innerWidth<= 950? 950 : window.innerWidth;
     canvasSize: number = window.innerWidth <= 500 ? 500 : window.innerWidth;
-    windowHeight: number = window.innerHeight;
+    windowHeight: number = window.innerHeight <= 790? 790 : window.innerHeight;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: Event): void {
         this.windowWidth = (event.target as Window).innerWidth <= 950? 950 : (event.target as Window).innerWidth;
-        this.windowHeight = (event.target as Window).innerHeight;
+        this.windowHeight = (event.target as Window).innerHeight<= 790? 790 : (event.target as Window).innerHeight;
         this.camera.aspect = this.windowWidth / this.windowHeight;
-        this.camera.updateProjectionMatrix();
+        // this.camera.updateProjectionMatrix();
 
         this.renderer.setSize(this.windowWidth, this.windowHeight);
 
