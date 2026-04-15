@@ -1,0 +1,25 @@
+<h3 mat-dialog-title>You need to authorize</h3>
+<div class="flex flex-col justify-center items-center overflow-hidden dialog-content-wrapper">
+    <p>Enter your email:</p>
+    <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email" />
+    </mat-form-field>
+    <p>Enter your password:</p>
+    <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="email" />
+    </mat-form-field>
+    <p>or</p>
+    <div class="grid-container">
+        <button mat-button class="grid-item py-5">google</button>
+        <button mat-button class="grid-item py-5">ios</button>
+        <button mat-button class="grid-item py-5">tg</button>
+        <button mat-button class="grid-item py-5">wallet</button>
+    </div>
+
+</div>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="sendForm()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

@@ -10,6 +10,8 @@ import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {AuthService} from "../../shared/services/auth.service";
 import {MatIcon} from "@angular/material/icon";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+import {MatDialog} from "@angular/material/dialog";
+import {AuthFormComponent} from "./auth-form/auth-form.component";
 
 @Component({
   selector: 'app-auth-register',
@@ -19,6 +21,7 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
   imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle, MatIcon],
 })
 export class AuthRegisterComponent implements OnInit{
+  readonly dialog = inject(MatDialog);
   private _snackBar = inject(MatSnackBar);
   private language: 'en' | 'uk' = 'uk';
   authService: AuthService = inject(AuthService);
@@ -60,6 +63,17 @@ export class AuthRegisterComponent implements OnInit{
       duration: 3000,
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
+    });
+  }
+
+  openAuthForm() {
+    const dialogRef = this.dialog.open(AuthFormComponent, {
+      data: {hello: ''},
+      panelClass: 'my-custom-dialog-container',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }
