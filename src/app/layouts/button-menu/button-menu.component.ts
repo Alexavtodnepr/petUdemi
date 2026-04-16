@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
-import {MatIconButton, MatMiniFabButton} from "@angular/material/button";
+import {MatMiniFabButton} from "@angular/material/button";
 import {BreakpointService} from "../../shared/services/breakpoint.service";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {SettingsService} from "../../shared/services/settings.service";
@@ -14,7 +14,6 @@ import {MatTooltip} from "@angular/material/tooltip";
     imports: [
         MatIcon,
         MatMiniFabButton,
-        MatIconButton,
         MatMenu,
         MatMenuItem,
         MatMenuTrigger,

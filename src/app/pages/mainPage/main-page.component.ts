@@ -1,17 +1,12 @@
 import {
-    AfterViewChecked,
     AfterViewInit,
     Component,
-    DoCheck,
     ElementRef, HostListener, OnDestroy,
     OnInit,
     ViewChild,
-    ViewContainerRef
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatIcon} from "@angular/material/icon";
-import {MatButtonModule, MatFabButton} from "@angular/material/button";
-import {MatDivider} from "@angular/material/divider";
+import {MatButtonModule} from "@angular/material/button";
 import {
     MatCard,
     MatCardActions,
@@ -20,14 +15,13 @@ import {
     MatCardSubtitle,
     MatCardTitle
 } from "@angular/material/card";
-import {RouterLink} from "@angular/router";
 import * as THREE from 'three';
 
 @Component({
     selector: 'app-main-page',
     templateUrl: 'main-page.component.html',
     styleUrl: 'main-page.component.scss',
-    imports: [CommonModule, MatIcon, MatButtonModule, MatDivider, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard, RouterLink]
+    imports: [CommonModule, MatButtonModule, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard]
 })
 export class MainPageComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('backgroundVideo') backgroundVideo!: ElementRef;

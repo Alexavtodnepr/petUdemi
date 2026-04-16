@@ -5,15 +5,13 @@ import {HeaderComponent} from "./layouts/header/header.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
 import {CommonModule} from '@angular/common';
 import {SettingModel} from './shared/models/setting-model';
-import {defaultSettings} from './shared/mocks/default-settings';
 import {SettingsService} from "./shared/services/settings.service";
-import {ButtonMenuComponent} from "./layouts/button-menu/button-menu.component";
 import {BreakpointService} from "./shared/services/breakpoint.service";
 import {AuthService} from "./shared/services/auth.service";
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent, ButtonMenuComponent],
+    imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

@@ -1,12 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {MatOption, MatSelect, MatSelectChange, MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectChange, MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {SettingModel, ThemeTypes} from "../../shared/models/setting-model";
 import {SettingsService} from "../../shared/services/settings.service";
-import {MatCheckbox, MatCheckboxChange} from "@angular/material/checkbox";
 import {MatDivider} from "@angular/material/divider";
 import {MatSlideToggle, MatSlideToggleChange} from "@angular/material/slide-toggle";
 
@@ -14,7 +13,7 @@ import {MatSlideToggle, MatSlideToggleChange} from "@angular/material/slide-togg
     selector: 'app-settings',
     templateUrl: 'settings.component.html',
     styleUrl: 'settings.component.scss',
-    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle]
+    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDivider, MatSlideToggle]
 })
 export class SettingsComponent implements OnInit{
   settingService: SettingsService = inject(SettingsService);

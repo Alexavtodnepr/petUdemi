@@ -1,12 +1,9 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {MatOption, MatSelect, MatSelectChange, MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
-import {MatCheckbox} from "@angular/material/checkbox";
-import {MatDivider} from "@angular/material/divider";
-import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {AuthService} from "../../shared/services/auth.service";
 import {MatIcon} from "@angular/material/icon";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
@@ -17,7 +14,7 @@ import {AuthFormComponent} from "./auth-form/auth-form.component";
     selector: 'app-auth-register',
     templateUrl: 'auth-register.component.html',
     styleUrl: 'auth-register.component.scss',
-    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle, MatIcon]
+    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatIcon]
 })
 export class AuthRegisterComponent implements OnInit{
   readonly dialog = inject(MatDialog);
