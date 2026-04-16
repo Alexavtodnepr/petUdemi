@@ -14,7 +14,7 @@ mat.$theme-ignore-duplication-warnings:true;
   @include mat.all-component-themes(m3-theme.$dark-theme);
   .mat-mdc-checkbox, .mat-mdc-slide-toggle{
     --mat-checkbox-label-text-color: white;
-    --mat-switch-label-text-color: white;
+    --mat-slide-toggle-label-text-color: white;
   }
   ::-webkit-scrollbar {
     width: 8px;
@@ -142,9 +142,9 @@ mat.$theme-ignore-duplication-warnings:true;
 .pink{
   @include mat.all-component-themes(m3-theme.$pink-theme);
   .mdc-fab,.mat-mdc-fab-base, .mdc-fab--mini, .mat-mdc-mini-fab, .mat-accent, .mat-mdc-button-base{
-    --mdc-fab-container-color: #fed9e1;
+    --mat-fab-container-color: #fed9e1;
     --mat-fab-small-ripple-color: rgb(110 0 0 / 12%);
-    --mdc-fab-small-container-color: #ff0000;
+    --mat-fab-small-container-color: #ff0000;
     --mat-fab-foreground-color: #ff0000;
     --mat-fab-state-layer-color: #ff0000;
     --mat-fab-ripple-color: rgb(255 0 0 / 12%);
