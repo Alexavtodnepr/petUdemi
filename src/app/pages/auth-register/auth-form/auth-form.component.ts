@@ -7,11 +7,10 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'app-auth-form',
-  standalone: true,
-  imports: [CommonModule, MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
-  templateUrl: './auth-form.component.html',
-  styleUrl: './auth-form.component.scss'
+    selector: 'app-auth-form',
+    imports: [CommonModule, MatDialogModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
+    templateUrl: './auth-form.component.html',
+    styleUrl: './auth-form.component.scss'
 })
 export class AuthFormComponent {
   readonly dialogRef = inject(MatDialogRef<AuthFormComponent>);

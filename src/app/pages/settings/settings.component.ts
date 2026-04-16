@@ -11,11 +11,10 @@ import {MatDivider} from "@angular/material/divider";
 import {MatSlideToggle, MatSlideToggleChange} from "@angular/material/slide-toggle";
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: 'settings.component.html',
-  styleUrl: 'settings.component.scss',
-  standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle],
+    selector: 'app-settings',
+    templateUrl: 'settings.component.html',
+    styleUrl: 'settings.component.scss',
+    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle]
 })
 export class SettingsComponent implements OnInit{
   settingService: SettingsService = inject(SettingsService);

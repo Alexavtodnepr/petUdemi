@@ -12,11 +12,10 @@ import {ButtonMenuComponent} from "../button-menu/button-menu.component";
 import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
-  selector: 'app-side-bar',
-  standalone: true,
-  imports: [MatButtonModule, RouterModule, CommonModule, MatListItem, MatNavList, MatIcon, MatTooltip, ButtonMenuComponent],
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.scss'
+    selector: 'app-side-bar',
+    imports: [MatButtonModule, RouterModule, CommonModule, MatListItem, MatNavList, MatIcon, MatTooltip, ButtonMenuComponent],
+    templateUrl: './side-bar.component.html',
+    styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {
   private router: Router = inject(Router);

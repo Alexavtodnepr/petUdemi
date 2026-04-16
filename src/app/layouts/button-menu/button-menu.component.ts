@@ -11,7 +11,6 @@ import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
     selector: 'app-button-menu',
-    standalone: true,
     imports: [
         MatIcon,
         MatMiniFabButton,

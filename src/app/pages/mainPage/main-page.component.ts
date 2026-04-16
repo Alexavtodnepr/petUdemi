@@ -27,8 +27,7 @@ import * as THREE from 'three';
     selector: 'app-main-page',
     templateUrl: 'main-page.component.html',
     styleUrl: 'main-page.component.scss',
-    standalone: true,
-    imports: [CommonModule, MatIcon, MatButtonModule, MatDivider, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard, RouterLink],
+    imports: [CommonModule, MatIcon, MatButtonModule, MatDivider, MatCardActions, MatCardContent, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCard, RouterLink]
 })
 export class MainPageComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('backgroundVideo') backgroundVideo!: ElementRef;

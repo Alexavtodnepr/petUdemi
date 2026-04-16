@@ -14,11 +14,10 @@ import {MatDialog} from "@angular/material/dialog";
 import {AuthFormComponent} from "./auth-form/auth-form.component";
 
 @Component({
-  selector: 'app-auth-register',
-  templateUrl: 'auth-register.component.html',
-  styleUrl: 'auth-register.component.scss',
-  standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle, MatIcon],
+    selector: 'app-auth-register',
+    templateUrl: 'auth-register.component.html',
+    styleUrl: 'auth-register.component.scss',
+    imports: [CommonModule, FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatCheckbox, MatDivider, MatSlideToggle, MatIcon]
 })
 export class AuthRegisterComponent implements OnInit{
   readonly dialog = inject(MatDialog);

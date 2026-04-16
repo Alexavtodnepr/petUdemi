@@ -13,7 +13,6 @@ import {AuthService} from "./shared/services/auth.service";
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [RouterOutlet, CommonModule, SideBarComponent, HeaderComponent, FooterComponent, ButtonMenuComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'

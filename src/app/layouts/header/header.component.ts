@@ -10,15 +10,14 @@ import {AuthRegisterComponent} from "../../pages/auth-register/auth-register.com
 import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
+    selector: 'app-header',
     imports: [
         CommonModule,
         ButtonMenuComponent,
         AuthRegisterComponent
     ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
     authService: AuthService = inject(AuthService);
