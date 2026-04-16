@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     settingService: SettingsService = inject(SettingsService);
     breakpointService: BreakpointService = inject(BreakpointService);
     authService: AuthService = inject(AuthService);
-    isHideFooter: boolean = true;
     title = 'petUdemi';
 
     ngOnInit(): void {
